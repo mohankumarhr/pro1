@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="newApp" ng-controller="newCont">
+        First Name:
+        <input placeholder="enter your first name" ng-model="firstname">
+        <br><br>
+        Last Name:
+        <input placeholder="enter your last name" ng-model="lirstname">
+        <br><br>
+        <button ng-click="handleClick()">Click me</button>
+        <h3>Your Full Name is {{name}}</h3>
+    </div>
+</body>
+<script>
+    angular.module('newApp', []).controller('newCont', ($scope)=>{
+        $scope.firstname = "moahn"
+        $scope.lirstname = "kumar"
+        $scope.handleClick = ()=>{
+            $scope.name = $scope.firstname + ' '+ $scope.lirstname
+        } 
+    })
+</script>
+</html>
